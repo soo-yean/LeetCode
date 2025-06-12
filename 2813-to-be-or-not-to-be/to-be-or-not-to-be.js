@@ -4,18 +4,16 @@
  */
 var expect = function(val) {
 
-    const test = new Object();
-
-    test.toBe = (otherVal) => {
-        if (otherVal === val) return true;
-        else throw new Error("Not Equal");
+   return {
+        toBe: function(otherVal){
+                if (otherVal === val) return true;
+                else throw new Error("Not Equal");
+        },
+        notToBe: function(otherVal){
+                if (otherVal !== val) return true;
+                else throw new Error("Equal");
+        }
     }
-    test.notToBe = (otherVal)=> {
-        if (otherVal !== val) return true;
-        else throw new Error("Equal");
-    }
-
-    return test;
     };
 
 /**
