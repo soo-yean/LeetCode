@@ -5,9 +5,9 @@
 var createCounter = function(init) {
     let currentVal = init;
     return {
-        increment: () => {return ++currentVal},
-        decrement: () => {return --currentVal},
-        reset: () => {return currentVal = init}
+        increment: () => ++currentVal,
+        decrement: () => --currentVal,
+        reset: () => currentVal = init
     };
 };
 
