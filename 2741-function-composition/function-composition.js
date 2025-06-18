@@ -6,11 +6,10 @@ var compose = function(functions) {
     return function(x) {
         if (!functions) return x;
 
-        let val = x;
         functions.reverse().map((fn) => {
-            val = fn(val);
+            x = fn(x);
         })
-        return val;
+        return x;
     }
 };
 
