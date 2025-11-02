@@ -11,4 +11,6 @@ var twoSum = function(nums, target) {
             }
         }
     }
+    // Return an empty array if no solution is found
+    return [];
 };
