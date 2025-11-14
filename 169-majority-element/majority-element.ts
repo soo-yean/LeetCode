@@ -3,9 +3,7 @@ function majorityElement(nums: number[]): number {
 
     for (const num of nums) {
         frequency[num] = (frequency[num] || 0) + 1;
-    }
 
-    for (const p in frequency) {
-        if (frequency[p] > nums.length / 2) return +p;
+        if (frequency[num] > nums.length / 2) return +num;
     }
 };
