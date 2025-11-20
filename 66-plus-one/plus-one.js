@@ -3,13 +3,15 @@
  * @return {number[]}
  */
 var plusOne = function(digits) {
-    let digitPlusOne = BigInt(digits.join('')) + BigInt(1);
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            return digits;
+        }
 
-    return digitPlusOne.toString().split(''); 
+        digits[i] = 0;
+    }
+
+    digits.unshift(1);
+    return digits;
 };
-
-/**
- * My first attempt was using parseInt, but it failed the test where the digit becomes extremely large.
- * It was because JavaScript's parseInt function have limitations on the size of integers it can handle.
- * So I had to switch to using BigInt, which can handle arbitrarily large integers without losing precision.
- */
